@@ -153,7 +153,7 @@ function column_data(io, info, i::Int, deflatebuffer::Vector{UInt8})
                     foo2 = read(io2, Int64)
                     # indices to pool
                     wb = read(io2, Int8)
-                    T = wb == 1 ? Int8 : Int16
+                    T = Dict(1 => UInt8, 2 => UInt16, 4 => UInt32)[wb]
                     idx = [read(io2, T) for _ in 1:info.nrows]
                     # pool
                     npools = maximum(idx)

@@ -142,4 +142,16 @@ end
     z = repeat('z', 256)
     @test df.longcompact[4] == z
     @test df.longcompact[5] == z
+
+    df = readjmp("compact_UInt8.jmp")
+    @test size(df) == (130, 1)
+    @test df.A[end] == "a130"
+
+    df = readjmp("compact_UInt16.jmp")
+    @test size(df) == (32770, 1)
+    @test df.A[end] == "a32770"
+
+    df = readjmp("compact_UInt32.jmp")
+    @test size(df) == (65537, 1)
+    @test df.A[end] == "a65537"
 end
