@@ -8,6 +8,7 @@ Scan directory `dir` for .jmp files and read them.
 # Examples
 ```
     JMPReader.scandir(raw"C:\\Program Files\\SAS\\JMP\\17\\Samples\\Data")
+    JMPReader.scandir(raw"C:\\Program Files\\JMP\\JMPPRO\\18\\Samples\\Data")
     JMPReader.scandir(joinpath(pathof(JMPReader), "..", "..", "test"))
 ```
 """
